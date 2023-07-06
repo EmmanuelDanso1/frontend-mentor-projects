@@ -1,0 +1,1 @@
+This readme file is a weather app which shows the temperature at diferent state 
