@@ -1,0 +1,1 @@
+This is a readme file which shows a stopwatch or clock in miliseconds, seconds, minutes and hours
