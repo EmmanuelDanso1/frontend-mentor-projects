@@ -6,6 +6,8 @@ const stopElement = document.getElementById("stop");
 
 const resetElement = document.getElementById("reset");
 
+const showContent = document.getElementById('stopwatch')
+
 // setting elapse time to know the time interval
 // timerinterval and starttime
 let start_time = 0;
@@ -20,6 +22,13 @@ time_interval = setInterval(()=>{
    elapsed_time = Date.now() - start_time;
    timerElement.textContent = formatTime(elapsed_time)
 }, 10);
+if(elapsed_time == 0){
+    showContent.textContent = "Remember, You've got this!!"
+}else if(elapsed_time == 60){
+    showContent.textContent = "How's your day going?"
+}else if(elapsed_time == 23){
+    showContent.textContent = "You did great!"
+}
 // adding disabled to it so that in case one press on the start, 
 // that client can press on the start again
 startElement.disabled = true;
@@ -39,7 +48,7 @@ return(
     (minutes ? (minutes > 9 ? minutes : "0" + minutes):"00")
     + ":" +
     (seconds ? (seconds > 9 ? seconds : "0" + seconds):"00")
-    + "." +
+    + ":" +
     (milisec > 9 ? milisec : "0" + milisec)) 
 
 }
